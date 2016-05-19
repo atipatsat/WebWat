@@ -51,15 +51,15 @@ public class DatabaseLoader implements CommandLineRunner {
     }
 
     public void productSetUp(){
-        this.productRepository.save(new Product("Product A",100,"P001",10,1,1,"This is product A","081-111-1111","This is from village A"));
-        this.productRepository.save(new Product("Product B",50,"P002",10,3,1,"This is product B","081-111-1111","This is from village B"));
-        this.productRepository.save(new Product("Product C",20,"P003",15,0.5,1,"This is product C","081-111-1111","This is from village C"));
-        this.productRepository.save(new Product("Product D",65,"P004",20,0.75,1,"This is product D","081-111-1111","This is from village D"));
-        this.productRepository.save(new Product("Product E",80,"P005",10,1.25,1,"This is product E","081-111-1111","This is from village E"));
-        this.productRepository.save(new Product("Product F",150,"P006",5,0.5,1,"This is product F","081-111-1111","This is from village F"));
-        this.productRepository.save(new Product("Product G",99,"P007",30,1,1,"This is product G","081-111-1111","This is from village G"));
-        this.productRepository.save(new Product("Product H",20,"P008",16,2.5,1,"This is product H","081-111-1111","This is from village H"));
+        this.productRepository.save(new Product("ข้าวฮาง",100,"P001",20,1.0,1,"ข้าวน้ำนมที่มีระยะแก่เกินจะทำข้าวเม่า แต่ยังไม่สุกพอระยะเก็บเกี่ยวหรือระยะพลับพลึง(รวงแก่ประมาณ 80%) นำข้าวเปลือกมาแช่น้ำและนำข้าวเปลือกไปนึ่งก่อนที่จะนำมาสีเป็นข้าวกล้อง ข้าวฮางทำได้ทั้งข้าวเจ้าและข้าวเหนียว","084-371-7844","มาจากชาวเขาชนเผ่าปกาเกอะญอ"));
+        this.productRepository.save(new Product("ข้าวกล้องดอย",50,"P002",20,1.0,1,"ข้าวกล้องดอยคือข้าวที่กระเทาะเปลือกออกเพียงอย่างเดียวเท่านั้น ไม่ผ่านการขัดสี เมล็ดข้าวจะมีสีขุ่นเป็นข้าวที่มีจมูกข้าวและเยื้อหุ้มเมล็ดข้าวติดอยู่มาก ซึ่งเป็นส่วนที่มีคุณค่าทางอาหารและเป็นประโยชน์ต่อร่างกาย มีวิตามินบี 1 สูง","084-371-7844","มาจากชาวเขาชนเผ่าปกาเกอะญอ"));
+        this.productRepository.save(new Product("ข้าวขาว",40,"P003",20,1.0,1,"ข้าวขาวคือข้าวที่ทำการขัดสีแล้ว มีเมล็ดที่อ่อนนุ่มเหมาะแก่การทำข้าวสวย","084-371-7844","มาจากชาวเขาชนเผ่าปกาเกอะญอ"));
+        this.productRepository.save(new Product("หญ้าหวาน",70,"P004",20,0.05,1,"หญ้าหวานคือหญ้าที่ให้ความหวานแทนน้ำตาล เหมาะสำหรับผู้ป่วยที่เป็นโรคเบาหวาน","089-798-1808","มาจากชาวบ้านอมลอง"));
+        this.productRepository.save(new Product("กล้วยแดง",50,"P005",20,0.4,1,"กล้วยทอดแบ่งเป็น สองประเภท กล้วยแดงและกล้วยเหลืองซึ่งแตกต่างกันจากวัตถูดิบในการผลิต เป็นกล้วยออแกนิคจากธรรมชาติ","084-371-7844","มาจากชุมชมอมลอง, อังคาย, ยั้งเมิน"));
+        this.productRepository.save(new Product("กล้วยเหลือง",50,"P006",20,0.4,1,"กล้วยทอดแบ่งเป็น สองประเภท กล้วยแดงและกล้วยเหลืองซึ่งแตกต่างกันจากวัตถูดิบในการผลิ ตเป็นกล้วยออแกนิคจากธรรมชาติ","084-371-7844","มาจากชุมชมอมลอง, อังคาย, ยั้งเมิน"));
+        this.productRepository.save(new Product("สบู่เหลวขมิ้น",50,"P007",20,0.4,1,"สบู่ธรรมชาติทำมาจากขมิ้น","084-371-7844","มาจากบ้านอมลอง"));
+        /*this.productRepository.save(new Product("Product H",20,"P008",16,2.5,1,"This is product H","081-111-1111","This is from village H"));
         this.productRepository.save(new Product("Product I",10,"P009",29,0.75,1,"This is product I","081-111-1111","This is from village I"));
-        this.productRepository.save(new Product("Product J",5,"P010",50,0.25,1,"This is product J","081-111-1111","This is from village J"));
+        this.productRepository.save(new Product("Product J",5,"P010",50,0.25,1,"This is product J","081-111-1111","This is from village J"));*/
     }
 }
