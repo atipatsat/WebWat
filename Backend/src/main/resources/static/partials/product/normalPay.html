@@ -1,0 +1,46 @@
+<div class="login_form container">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Payment</h3>
+            </div>
+            <div class="panel-body">
+                <div>
+                    <div class="form-group">
+                        <label for="file">Transfer Confirmation</label>
+                        <input type="file" class="form-control" id="file" placeholder="File">
+                        <div>
+                            <img id="preview" src="" alt="your image" height="100" />
+                        </div>
+                    </div>
+                </div>
+                <ul>
+                    <li ng-repeat="item in order.items">
+                        [{{item.amount}}]{{item.product.name}}
+                    </li>
+                </ul>
+
+                <div>
+                    <button class="btn btn-success" ng-click="pay(payment)">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+     function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                jQuery('#preview').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    jQuery("#file").change(function(){
+        readURL(this);
+    });
+</script>

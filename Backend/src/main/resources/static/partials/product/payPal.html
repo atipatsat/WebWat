@@ -1,0 +1,15 @@
+<div class="login_form container" ng-controller="ManageCtrl as manageCtrl">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Payment</h3>
+            </div>
+            <div class="panel-body">
+                <div ng-repeat="item in order.items">
+                    {{item.product.name}}
+                </div>
+                <div><button class="btn btn-success" ng-click="pay(payment)">Pay</button></div>
+            </div>
+        </div>
+    </div>
+</div>

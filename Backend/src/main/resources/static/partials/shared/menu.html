@@ -1,0 +1,20 @@
+<div ng-controller="SideMenuCtrl as sideMenu">
+    <div class="side_menu">
+        <ul class="side_menu_list" ng-show="!sideMenu.isUser && !sideMenu.isAdmin">
+            <li><a href="#/login/">Login</a></li>
+            <li><a href="#/register/">Register</a></li>
+        </ul>
+        <ul class="side_menu_list"  ng-show="sideMenu.isUser">
+            <li><a href="#/cart/">Cart</a></li>
+            <li><a href="#/orders/">Orders</a></li>
+        </ul>
+        <ul class="side_menu_list" ng-show="sideMenu.isAdmin">
+            <li><a href="#/admin/">Manage</a></li>
+            <li><a href="#/admin/products/">Products</a></li>
+            <li><a href="#/admin/members/">Members</a></li>
+        </ul>
+        <ul class="side_menu_list" ng-show="sideMenu.isUser || sideMenu.isAdmin">
+            <li><a href="" ng-click="sideMenu.logout()">Logout</a></li>
+        </ul>
+    </div>
+</div>

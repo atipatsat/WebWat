@@ -1,0 +1,12 @@
+{
+  "name": "watphasom",
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "angular": "~1.5.0",
+    "angular-cookies": "~1.5.x",
+    "angular-route": "~1.5.x",
+    "ng-notify": "~0.8.x",
+    "bootstrap": "~3.3.0"
+  }
+}

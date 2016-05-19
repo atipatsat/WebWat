@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="watPhaSomApp">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>Wat Pha Som Shop</title>
+    <link rel="stylesheet" href="build/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="build/css/main.css"/>
+    <link rel="stylesheet" href="build/css/ng-notify.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+    <script src="build/js/angular.js"></script>
+    <script src="build/js/angular-cookies.js"></script>
+    <script src="build/js/angular-route.js"></script>
+    <script src="build/js/ng-notify.min.js"></script>
+    <script src="build/js/app.js"></script>
+</head>
+<body>
+<div ng-include="'partials/shared/header.html'"></div>
+<div class="web_body">
+    <div class="web_menu">
+        <div ng-include="'partials/shared/menu.html'"></div>
+    </div>
+    <div class="web_content" style="height: 100%; overflow-y: scroll;">
+        <div ng-view>
+        </div>
+    </div>
+</div>
+</body>
+</html>

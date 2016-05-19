@@ -1,0 +1,20 @@
+<div class="login_form container">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Members</h3>
+            </div>
+            <div class="panel-body">
+                <div><a href="#/admin/products/create/">Add Product</a></div>
+                <div ng-repeat="(key, value) in members track by $index">
+                    <button class="btn btn-warning" ng-click="delete(key)">Delete</button>
+                    <select ng-model="value.type">
+                        <option value="1">Retail</option>
+                        <option value="2">Wholesale</option>
+                    </select>
+                    {{key}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

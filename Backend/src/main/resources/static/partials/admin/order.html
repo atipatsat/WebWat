@@ -1,0 +1,60 @@
+<div class="login_form container">
+    <div class="col-md-6 col-md-offset-3">
+        <form novalidate>
+            <h1>Edit Order</h1>
+            <div>
+                <div class="form-group">
+                    <label for="label">Label</label>
+                    <input type="text" class="form-control" id="label" placeholder="Label" ng-model="order.label" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Address" ng-model="order.address" required>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="transportation" id="transportation1" value="1" ng-model="order.transport" ng-click="transportFee = 0; updateTotal();" checked>
+                        Free transportation from Wat to Chiang Mai
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="transportation" id="transportation2" value="2" ng-model="order.transport" ng-click="transportFee = 800; updateTotal();">
+                        Immediate transportation from Wat to Chiang Mai(+800)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select class="form-control" id="status" ng-model="order.status" required>
+                        <option value="1">Waiting</option>
+                        <option value="2">Approve</option>
+                        <option value="3">Reject</option>
+                    </select>
+                </div>
+                <div>
+                    <ul>
+                        <li ng-repeat="item in order.items">{{item.product.name}} | {{item.amount}}</li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="weight">Total Weight</label>
+                    <input type="text" class="form-control" id="weight" placeholder="Total" ng-model="order.weight" ng-change="updateTotal();" required>
+                </div>
+                <div class="form-group">
+                    <label for="transport">Total Fee</label>
+                    <input type="text" class="form-control" id="transport" placeholder="Transportation Fee" ng-model="transportFee" ng-change="updateTotal();" required>
+                </div>
+                <div class="form-group">
+                    <label for="transport">Total Price</label>
+                    <input type="text" class="form-control" id="price" placeholder="Total product prices" ng-model="order.price" ng-change="updateTotal();" required>
+                </div>
+                <div class="form-group">
+                    <label for="transport">Total Payment</label>
+                    <input type="text" class="form-control" id="total" placeholder="Total" ng-value="order.total" required>
+                </div>
+            </div>
+            <div class="alert alert-danger" role="alert" ng-show="isInValid">Oops... There is something wrong.</div>
+            <button type="submit" class="btn btn-default" ng-click="save(product)">Save</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="product_wrapper col-md-12">
+    <div class="product_box col-md-3" ng-repeat="product in products">
+        <h3><a href="#/product/{{product.id}}">{{product.name}}</a></h3>
+        <div>
+            <span class="label label-success" ng-show="product.status == 1">Available</span>
+            <span class="label label-danger" ng-show="product.status == 2">Not Available</span>
+            <small>{{product.code}}</small>
+        </div>
+        <div>Price:
+            <span ng-show="!isWholesale()">{{product.price}}</span>
+            <span style="color: red;" ng-show="isWholesale()">{{Math.round((product.price * 0.1) * 100) / 100}}</span>
+        </div>
+        <div><button class="btn btn-info" ng-click="addToCart(product)" ng-disabled="{{(product.status == 1)? false:true}}">Add To Cart</button></div>
+    </div>
+</div>
