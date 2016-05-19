@@ -1,0 +1,31 @@
+<div class="login_form container">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">New Orders</h3>
+            </div>
+            <div class="panel-body">
+                <div ng-repeat="order in orders track by order.id">
+                    <span class="label label-primary">{{order.label}}</span>
+                    <span class="label label-warning" ng-show="order.status == 1">Waiting</span>
+                    <span class="label label-success" ng-show="order.status == 2">Approve</span>
+                    <span class="label label-danger" ng-show="order.status == 3">Reject</span>
+                    <span class="label label-danger" ng-show="order.status == 4">Paid</span>
+                    {{order.user.email}} <a href="#/admin/order/{{$index}}"><button class="btn btn-info" >Open</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">New Payment</h3>
+            </div>
+            <div class="panel-body">
+                <div ng-repeat="payment in payments">
+                    <span class="label label-primary">{{payment.order.label}}</span> {{payment.order.user.email}} <a href="/#/admin/check/{{$index}}">Check</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

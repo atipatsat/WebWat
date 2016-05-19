@@ -1,0 +1,34 @@
+<div class="login_form container">
+    <div class="col-md-6 col-md-offset-3">
+        <h3>{{product.name}}</h3>
+        <div>
+            <small>{{product.code}}</small>
+        </div>
+        <div><strong>Price:</strong> {{product.price}}</div>
+        <div>{{product.description}}</div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h4>Detailed</h4>
+                <div>Weight: {{product.weight}} kg</div>
+                <div>Source: {{product.source}}</div>
+                <div>Contact: {{product.contact}}</div>
+            </div>
+        </div>
+        <div>
+            <a href="#/product/{{product.id}}/review">
+                <button class="btn btn-warning">Add Review</button>
+            </a>
+        </div>
+        <div>
+            <div class="panel panel-info">
+                <div class="panel-heading">Review</div>
+                <div class="panel-body">
+                    <div class="panel-body" ng-repeat="review in product.reviews">
+                        <div><h4>{{review.email}}</h4> | Score: {{review.score}}</div>
+                        <div>{{review.info}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

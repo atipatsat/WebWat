@@ -1,0 +1,88 @@
+<html>
+<head>
+    <script src="/build/js/angular.js"></script>
+    <script src="/build/js/angular-cookies.js"></script>
+    <script>
+        angular.module('print', ['ngCookies'])
+            .controller('PrintController', ['$scope', '$cookies', function($scope, $cookies) {
+              $scope.payment = JSON.parse($cookies.get('payment'));
+            }]);
+    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FAFAFA;
+            font: 12pt"Tahoma";
+        }
+        * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        .page {
+            margin: 0 auto;
+            width: 842px;
+            height: 595px;
+            background: white;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .sender{
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            padding: 10px;
+            border: 1px solid lightgrey;
+        }
+        .receiver{
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            width: 70%;
+            padding: 10px;
+            border: 1px solid lightgrey;
+            font-size: 2em;
+        }
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        @media print{
+            html, body {
+                width: 297mm;
+                height: 210mm;
+            }
+            .page {
+                margin: 0;
+                border: initial;
+                border-radius: initial;
+                width: initial;
+                min-height: initial;
+                box-shadow: initial;
+                background: initial;
+                page-break-after: always;
+           }
+            @page {size: landscape}
+        }
+    </style>
+</head>
+<body ng-app="print">
+    <div ng-controller="PrintController">
+        <div class="book">
+            <div class="page">
+                <div class="sender">
+                    <div>จาก คุณ เอ</div>
+                    <div>เลขที่ 111/1</div>
+                    <div>ไปรษณีย์ 50000</div>
+                </div>
+                <div class="receiver">
+                    <div>ถึง: </div>
+                    <div>ที่อยู่: {{payment.order.address}}</div>
+                    <div>ไปรษณีย์: </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

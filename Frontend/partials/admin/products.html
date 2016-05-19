@@ -1,0 +1,15 @@
+<div class="login_form container">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Product</h3>
+            </div>
+            <div class="panel-body">
+                <div><a href="#/admin/products/create/">Add Product</a></div>
+                <div ng-repeat="(key,product) in products track by $index">
+                    <a href="#/admin/products/edit/{{$index}}"><button class="btn btn-warning">Edit</button></a><button class="btn btn-danger" ng-click="delete(product)">Delete</button> {{product.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

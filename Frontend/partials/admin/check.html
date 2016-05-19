@@ -1,0 +1,29 @@
+<div class="login_form container">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Payment | Order: {{payment.order.label}}</h3>
+            </div>
+            <div class="panel-body">
+                <h4>
+                    {{payment.order.user.email}}
+                    <span class="label label-warning" ng-show="order.status == 1">Waiting</span>
+                    <span class="label label-success" ng-show="order.status == 2">Approve</span>
+                    <span class="label label-danger" ng-show="order.status == 3">Reject</span>
+                    <span class="label label-danger" ng-show="order.status == 4">Paid</span>
+                </h4>
+                <ul>
+                    <li ng-repeat="item in payment.order.items">{{item.product.name}} | {{item.amount}}</li>
+                </ul>
+                <div><strong>Total Weight:</strong> {{payment.order.weight}}</div>
+                <div><strong>Weight Fee:</strong> {{payment.order.weight * 40}}</div>
+                <div><strong>Transport Fee:</strong> {{payment.order.fee}}</div>
+                <div><strong>Total Price:</strong> {{payment.order.price}}</div>
+                <div><strong>Total Payment:</strong> {{payment.order.total}}</div>
+                <div>
+                    <a><button class="btn btn-success" ng-click="print(payment)">Print Label</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

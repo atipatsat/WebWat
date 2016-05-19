@@ -1,0 +1,14 @@
+<div class="login_form container" ng-controller="ManageCtrl as manageCtrl">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">New Orders</h3>
+            </div>
+            <div class="panel-body">
+                <div ng-repeat="order in orderCollection track by order.id">
+                    {{order.product.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
